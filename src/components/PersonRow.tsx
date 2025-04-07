@@ -26,28 +26,8 @@ export const PersonRow = ({ person, activePerson }: Props) => {
         <td>{sex}</td>
         <td>{born}</td>
         <td>{died}</td>
-        <td>
-          {motherName ? (
-            mother ? (
-              <PersonLink person={mother} />
-            ) : (
-              motherName
-            )
-          ) : (
-            '-'
-          )}
-        </td>
-        <td>
-          {fatherName ? (
-            father ? (
-              <PersonLink person={father} />
-            ) : (
-              fatherName
-            )
-          ) : (
-            '-'
-          )}
-        </td>
+        <td>{mother ? <PersonLink person={mother} /> : motherName || '-'}</td>
+        <td>{father ? <PersonLink person={father} /> : fatherName || '-'}</td>
       </tr>
     </>
   );
